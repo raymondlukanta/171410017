@@ -7,16 +7,17 @@ include "admin/koneksi.php";
 
 $username = ($_POST['nidn']);
 $password = md5($_POST['password']);
+$meta = "<meta http-equiv='refresh' content='1; url=index.php'>"
 
 if(!empty($password) && empty($username)){
     echo "<script> alert('Username Belum Diisi'); </script>";
-    echo "<meta http-equiv='refresh' content='1; url=index.php'>";
+    echo $meta;
 }else if(!empty($username) && empty($password)){
     echo "<script> alert('Password Belum Diisi'); </script>";
-    echo "<meta http-equiv='refresh' content='1; url=index.php'>";
+    echo $meta;
 }else if(empty($username) && empty($password)){
     echo "<script> alert('Username dan Password Belum Diisi'); </script>";
-    echo "<meta http-equiv='refresh' content='1; url=index.php'>";
+    echo $meta;
 
 }else if(!empty($username)&& !empty($password)){
     
